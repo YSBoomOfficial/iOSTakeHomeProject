@@ -13,6 +13,7 @@
 		D344FC2F28CBFD100004AC6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D344FC2E28CBFD100004AC6F /* Preview Assets.xcassets */; };
 		D344FC3628CBFD590004AC6F /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC3528CBFD590004AC6F /* Symbols.swift */; };
 		D344FC3928CBFEF60004AC6F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC3828CBFEF60004AC6F /* Theme.swift */; };
+		D344FC4E28CC060B0004AC6F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D344FC4D28CC060B0004AC6F /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		D344FC2E28CBFD100004AC6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D344FC3528CBFD590004AC6F /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		D344FC3828CBFEF60004AC6F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		D344FC4D28CC060B0004AC6F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,10 @@
 			children = (
 				D344FC2728CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift */,
 				D344FC3728CBFDA60004AC6F /* Resources */,
+				D344FC3A28CC00360004AC6F /* Base */,
+				D344FC3B28CC00410004AC6F /* Features */,
 				D344FC2928CBFD0F0004AC6F /* ContentView.swift */,
+				D344FC4D28CC060B0004AC6F /* Launch Screen.storyboard */,
 				D344FC2B28CBFD100004AC6F /* Assets.xcassets */,
 				D344FC2D28CBFD100004AC6F /* Preview Content */,
 			);
@@ -79,6 +84,132 @@
 				D344FC3828CBFEF60004AC6F /* Theme.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D344FC3A28CC00360004AC6F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D344FC3B28CC00410004AC6F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D344FC3C28CC00630004AC6F /* People */,
+				D344FC3D28CC006C0004AC6F /* Create */,
+				D344FC3E28CC00730004AC6F /* Detail */,
+				D344FC3F28CC00780004AC6F /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D344FC3C28CC00630004AC6F /* People */ = {
+			isa = PBXGroup;
+			children = (
+				D344FC4128CC009C0004AC6F /* Models */,
+				D344FC4028CC00940004AC6F /* Views */,
+				D344FC4228CC00A30004AC6F /* ViewModels */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		D344FC3D28CC006C0004AC6F /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				D344FC4328CC00B50004AC6F /* Models */,
+				D344FC4428CC00B50004AC6F /* Views */,
+				D344FC4528CC00B50004AC6F /* ViewModels */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		D344FC3E28CC00730004AC6F /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D344FC4628CC00BC0004AC6F /* Models */,
+				D344FC4828CC00BC0004AC6F /* Views */,
+				D344FC4728CC00BC0004AC6F /* ViewModels */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D344FC3F28CC00780004AC6F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D344FC4A28CC00BE0004AC6F /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D344FC4028CC00940004AC6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D344FC4128CC009C0004AC6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D344FC4228CC00A30004AC6F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D344FC4328CC00B50004AC6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D344FC4428CC00B50004AC6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D344FC4528CC00B50004AC6F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D344FC4628CC00BC0004AC6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D344FC4728CC00BC0004AC6F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D344FC4828CC00BC0004AC6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D344FC4A28CC00BE0004AC6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D344FC4E28CC060B0004AC6F /* Launch Screen.storyboard in Resources */,
 				D344FC2F28CBFD100004AC6F /* Preview Assets.xcassets in Resources */,
 				D344FC2C28CBFD100004AC6F /* Assets.xcassets in Resources */,
 			);
@@ -286,9 +418,10 @@
 				DEVELOPMENT_TEAM = HB73YMFXYF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSTakeHomeProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,9 +448,10 @@
 				DEVELOPMENT_TEAM = HB73YMFXYF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSTakeHomeProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
