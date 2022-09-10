@@ -18,6 +18,7 @@
 		D344FC5728CC0BA50004AC6F /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC5628CC0BA50004AC6F /* UsersResponse.swift */; };
 		D344FC5A28CC0C310004AC6F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC5928CC0C310004AC6F /* Models.swift */; };
 		D344FC5D28CC0C7D0004AC6F /* StaticJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC5C28CC0C7D0004AC6F /* StaticJSONMapper.swift */; };
+		D34F5E5428CCDBFD00D81712 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5328CCDBFD00D81712 /* CreateView.swift */; };
 		D3502BF528CC140100E8E09A /* SingleUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = D3502BF428CC140100E8E09A /* SingleUserData.json */; };
 		D3502BF728CC162300E8E09A /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF628CC162300E8E09A /* PeopleView.swift */; };
 		D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF828CC1BA600E8E09A /* PersonItemView.swift */; };
@@ -38,6 +39,7 @@
 		D344FC5628CC0BA50004AC6F /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
 		D344FC5928CC0C310004AC6F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D344FC5C28CC0C7D0004AC6F /* StaticJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticJSONMapper.swift; sourceTree = "<group>"; };
+		D34F5E5328CCDBFD00D81712 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		D3502BF428CC140100E8E09A /* SingleUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleUserData.json; sourceTree = "<group>"; };
 		D3502BF628CC162300E8E09A /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		D3502BF828CC1BA600E8E09A /* PersonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonItemView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		D344FC4428CC00B50004AC6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D34F5E5328CCDBFD00D81712 /* CreateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				D344FC2828CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift in Sources */,
 				D344FC5728CC0BA50004AC6F /* UsersResponse.swift in Sources */,
 				D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */,
+				D34F5E5428CCDBFD00D81712 /* CreateView.swift in Sources */,
 				D344FC5A28CC0C310004AC6F /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
