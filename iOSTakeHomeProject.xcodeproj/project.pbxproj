@@ -22,6 +22,8 @@
 		D34F5E5728CCDF5400D81712 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5628CCDF5400D81712 /* NetworkingManager.swift */; };
 		D34F5E5928CCE47900D81712 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5828CCE47900D81712 /* PeopleViewModel.swift */; };
 		D34F5E5B28CCE70700D81712 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5A28CCE70700D81712 /* DetailViewModel.swift */; };
+		D34F5E5D28CCF8BC00D81712 /* NewPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5C28CCF8BC00D81712 /* NewPerson.swift */; };
+		D34F5E5F28CCF91D00D81712 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5E28CCF91D00D81712 /* CreateViewModel.swift */; };
 		D3502BF528CC140100E8E09A /* SingleUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = D3502BF428CC140100E8E09A /* SingleUserData.json */; };
 		D3502BF728CC162300E8E09A /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF628CC162300E8E09A /* PeopleView.swift */; };
 		D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF828CC1BA600E8E09A /* PersonItemView.swift */; };
@@ -46,6 +48,8 @@
 		D34F5E5628CCDF5400D81712 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		D34F5E5828CCE47900D81712 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		D34F5E5A28CCE70700D81712 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D34F5E5C28CCF8BC00D81712 /* NewPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPerson.swift; sourceTree = "<group>"; };
+		D34F5E5E28CCF91D00D81712 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		D3502BF428CC140100E8E09A /* SingleUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleUserData.json; sourceTree = "<group>"; };
 		D3502BF628CC162300E8E09A /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		D3502BF828CC1BA600E8E09A /* PersonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonItemView.swift; sourceTree = "<group>"; };
@@ -116,9 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				D344FC5828CC0C170004AC6F /* Models */,
-				D3502BFA28CC1CA700E8E09A /* Views */,
 				D344FC5B28CC0C630004AC6F /* Mapper */,
 				D34F5E5528CCDF3C00D81712 /* API */,
+				D3502BFA28CC1CA700E8E09A /* Views */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -138,8 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				D344FC4128CC009C0004AC6F /* Models */,
-				D344FC4028CC00940004AC6F /* Views */,
 				D344FC4228CC00A30004AC6F /* ViewModels */,
+				D344FC4028CC00940004AC6F /* Views */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -148,8 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				D344FC4328CC00B50004AC6F /* Models */,
-				D344FC4428CC00B50004AC6F /* Views */,
 				D344FC4528CC00B50004AC6F /* ViewModels */,
+				D344FC4428CC00B50004AC6F /* Views */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -158,8 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				D344FC4628CC00BC0004AC6F /* Models */,
-				D344FC4828CC00BC0004AC6F /* Views */,
 				D344FC4728CC00BC0004AC6F /* ViewModels */,
+				D344FC4828CC00BC0004AC6F /* Views */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -200,6 +204,7 @@
 		D344FC4328CC00B50004AC6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D34F5E5C28CCF8BC00D81712 /* NewPerson.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 		D344FC4528CC00B50004AC6F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D34F5E5E28CCF91D00D81712 /* CreateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				D344FC5D28CC0C7D0004AC6F /* StaticJSONMapper.swift in Sources */,
 				D3502BFC28CC1CB800E8E09A /* PillView.swift in Sources */,
 				D344FC3628CBFD590004AC6F /* Symbols.swift in Sources */,
+				D34F5E5F28CCF91D00D81712 /* CreateViewModel.swift in Sources */,
 				D344FC3928CBFEF60004AC6F /* Theme.swift in Sources */,
 				D3502BF728CC162300E8E09A /* PeopleView.swift in Sources */,
 				D3502BFE28CC214100E8E09A /* DetailView.swift in Sources */,
@@ -375,6 +382,7 @@
 				D34F5E5728CCDF5400D81712 /* NetworkingManager.swift in Sources */,
 				D344FC5728CC0BA50004AC6F /* UsersResponse.swift in Sources */,
 				D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */,
+				D34F5E5D28CCF8BC00D81712 /* NewPerson.swift in Sources */,
 				D34F5E5928CCE47900D81712 /* PeopleViewModel.swift in Sources */,
 				D34F5E5428CCDBFD00D81712 /* CreateView.swift in Sources */,
 				D34F5E5B28CCE70700D81712 /* DetailViewModel.swift in Sources */,
