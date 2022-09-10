@@ -21,6 +21,15 @@ struct iOSTakeHomeProjectApp: App {
 						}
 
 					}
+
+				SettingsView()
+					.tabItem {
+						Label {
+							Text("Settings")
+						} icon: {
+							Symbols.gear
+						}
+					}
 			}
         }
     }
