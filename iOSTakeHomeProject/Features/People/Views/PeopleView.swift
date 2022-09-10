@@ -31,13 +31,14 @@ struct PeopleView: View {
 				}
 			}
 			.navigationTitle("People")
-			.sheet(isPresented: $shouldShowCreate) {
-				CreateView()
-			}
+			.onAppear { vm.fetchUsers() }
 			.toolbar {
 				ToolbarItem(placement: .primaryAction) { create }
 			}
-			.onAppear { vm.fetchUsers() }
+			.sheet(isPresented: $shouldShowCreate) {
+				CreateView()
+			}
+			.alert(isPresented: $vm.hasError, error: vm.error) {}
 		}
 	}
 }

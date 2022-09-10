@@ -9,6 +9,8 @@ import Foundation
 
 final class PeopleViewModel: ObservableObject {
 	@Published private(set) var users = [User]()
+	@Published private(set) var error: NetworkingManager.NetworkingError?
+	@Published var hasError = false
 
 	func fetchUsers() {
 		NetworkingManager.shared.request(
@@ -20,7 +22,8 @@ final class PeopleViewModel: ObservableObject {
 					case let .success(response):
 						self?.users = response.data
 					case let .failure(error):
-						print(error)
+						self?.hasError = true
+						self?.error = error as? NetworkingManager.NetworkingError
 				}
 			}
 		}

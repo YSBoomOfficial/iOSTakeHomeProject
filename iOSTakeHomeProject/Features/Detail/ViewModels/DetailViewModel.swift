@@ -9,6 +9,8 @@ import Foundation
 
 final class DetailViewModel: ObservableObject {
 	@Published private(set) var userInfo: UserDetailResponse?
+	@Published private(set) var error: NetworkingManager.NetworkingError?
+	@Published var hasError = false
 
 	func fetchDetails(for id: Int) {
 		NetworkingManager.shared.request(
@@ -20,7 +22,8 @@ final class DetailViewModel: ObservableObject {
 					case let .success(response):
 						self?.userInfo = response
 					case let .failure(error):
-						print(error)
+						self?.hasError = true
+						self?.error = error as? NetworkingManager.NetworkingError
 				}
 			}
 		}
