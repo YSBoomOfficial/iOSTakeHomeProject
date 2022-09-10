@@ -14,11 +14,12 @@ final class CreateViewModel: ObservableObject {
 	@Published var hasError = false
 
 	func create() {
+		state = .submitting
 		let encoder = JSONEncoder()
 		encoder.keyEncodingStrategy = .convertToSnakeCase
 		let data = try? encoder.encode(person)
 
-		NetworkingManager.shared.request(methodType: .POST(data: data), "https://reqres.in/api/users") { [weak self] result in
+		NetworkingManager.shared.request(methodType: .POST(data: data), "https://reqres.in/api/users" + "?delay=3") { [weak self] result in
 			DispatchQueue.main.async {
 				switch result {
 					case .success():
@@ -35,7 +36,8 @@ final class CreateViewModel: ObservableObject {
 
 extension CreateViewModel {
 	enum SubmissionState {
-		case unsuccessful
+		case submitting
 		case successful
+		case unsuccessful
 	}
 }

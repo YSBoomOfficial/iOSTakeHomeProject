@@ -28,11 +28,13 @@ struct CreateView: View {
 				ToolbarItem(placement: .primaryAction) { done }
 			}
 			.onChange(of: vm.state) { formState in
-				if formState == .successful {
-					dismiss()
-				}
+				if formState == .successful { dismiss() }
 			}
 			.alert(isPresented: $vm.hasError, error: vm.error) {}
+			.overlay {
+				if vm.state == .submitting { ProgressView("Submitting…") }
+			}
+			.disabled(vm.state == .submitting)
 		}
 	}
 }

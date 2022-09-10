@@ -9,15 +9,18 @@ import Foundation
 
 final class DetailViewModel: ObservableObject {
 	@Published private(set) var userInfo: UserDetailResponse?
+	@Published private(set) var isLoading = false
 	@Published private(set) var error: NetworkingManager.NetworkingError?
 	@Published var hasError = false
-
+	
 	func fetchDetails(for id: Int) {
+		isLoading = true
 		NetworkingManager.shared.request(
-			"https://reqres.in/api/users/\(id)",
+			"https://reqres.in/api/users/\(id)" + "?delay=3",
 			type: UserDetailResponse.self
 		) { [weak self] result in
 			DispatchQueue.main.async {
+				defer { self?.isLoading = false }
 				switch result {
 					case let .success(response):
 						self?.userInfo = response
