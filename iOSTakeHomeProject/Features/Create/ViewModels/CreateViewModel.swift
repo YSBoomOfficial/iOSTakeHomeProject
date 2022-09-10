@@ -10,27 +10,42 @@ import Foundation
 final class CreateViewModel: ObservableObject {
 	@Published var person = NewPerson()
 	@Published private(set) var state: SubmissionState?
-	@Published private(set) var error: NetworkingManager.NetworkingError?
+	@Published private(set) var error: FormError?
 	@Published var hasError = false
 
-	func create() {
-		state = .submitting
-		let encoder = JSONEncoder()
-		encoder.keyEncodingStrategy = .convertToSnakeCase
-		let data = try? encoder.encode(person)
+	private let validator = CreateValidator()
 
-		NetworkingManager.shared.request(methodType: .POST(data: data), "https://reqres.in/api/users" + "?delay=3") { [weak self] result in
-			DispatchQueue.main.async {
-				switch result {
-					case .success():
-						self?.state = .successful
-					case let .failure(error):
-						self?.state = .unsuccessful
-						self?.hasError = true
-						self?.error = error as? NetworkingManager.NetworkingError
+	func create() {
+
+		do {
+			try validator.validate(person)
+
+			state = .submitting
+			let encoder = JSONEncoder()
+			encoder.keyEncodingStrategy = .convertToSnakeCase
+			let data = try? encoder.encode(person)
+
+			NetworkingManager.shared.request(methodType: .POST(data: data), "https://reqres.in/api/users" + "?delay=3") { [weak self] result in
+				DispatchQueue.main.async {
+					switch result {
+						case .success():
+							self?.state = .successful
+						case let .failure(error):
+							self?.state = .unsuccessful
+							self?.hasError = true
+							if let error = error as? NetworkingManager.NetworkingError {
+								self?.error = .networking(error: error)
+							}
+					}
 				}
 			}
+		} catch {
+			hasError = true
+			if let validationError = error as? CreateValidator.CreateValidatorError {
+				self.error = .validation(error: validationError)
+			}
 		}
+
 	}
 }
 
@@ -39,5 +54,19 @@ extension CreateViewModel {
 		case submitting
 		case successful
 		case unsuccessful
+	}
+}
+
+extension CreateViewModel {
+	enum FormError: LocalizedError {
+		case networking(error: LocalizedError)
+		case validation(error: LocalizedError)
+
+		var errorDescription: String? {
+			switch self {
+				case let .networking(error), let .validation(error):
+					return error.errorDescription
+			}
+		}
 	}
 }

@@ -25,6 +25,7 @@
 		D34F5E5D28CCF8BC00D81712 /* NewPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5C28CCF8BC00D81712 /* NewPerson.swift */; };
 		D34F5E5F28CCF91D00D81712 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5E28CCF91D00D81712 /* CreateViewModel.swift */; };
 		D34F5E6128CD063300D81712 /* CheckmarkPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E6028CD063300D81712 /* CheckmarkPopoverView.swift */; };
+		D34F5E6428CD094600D81712 /* CreateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E6328CD094600D81712 /* CreateValidator.swift */; };
 		D3502BF528CC140100E8E09A /* SingleUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = D3502BF428CC140100E8E09A /* SingleUserData.json */; };
 		D3502BF728CC162300E8E09A /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF628CC162300E8E09A /* PeopleView.swift */; };
 		D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF828CC1BA600E8E09A /* PersonItemView.swift */; };
@@ -52,6 +53,7 @@
 		D34F5E5C28CCF8BC00D81712 /* NewPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPerson.swift; sourceTree = "<group>"; };
 		D34F5E5E28CCF91D00D81712 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		D34F5E6028CD063300D81712 /* CheckmarkPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkPopoverView.swift; sourceTree = "<group>"; };
+		D34F5E6328CD094600D81712 /* CreateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateValidator.swift; sourceTree = "<group>"; };
 		D3502BF428CC140100E8E09A /* SingleUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleUserData.json; sourceTree = "<group>"; };
 		D3502BF628CC162300E8E09A /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		D3502BF828CC1BA600E8E09A /* PersonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonItemView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				D344FC4328CC00B50004AC6F /* Models */,
 				D344FC4528CC00B50004AC6F /* ViewModels */,
+				D34F5E6228CD092F00D81712 /* Validator */,
 				D344FC4428CC00B50004AC6F /* Views */,
 			);
 			path = Create;
@@ -282,6 +285,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		D34F5E6228CD092F00D81712 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				D34F5E6328CD094600D81712 /* CreateValidator.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
 		D3502BF328CC132400E8E09A /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +400,7 @@
 				D34F5E5D28CCF8BC00D81712 /* NewPerson.swift in Sources */,
 				D34F5E5928CCE47900D81712 /* PeopleViewModel.swift in Sources */,
 				D34F5E5428CCDBFD00D81712 /* CreateView.swift in Sources */,
+				D34F5E6428CD094600D81712 /* CreateValidator.swift in Sources */,
 				D34F5E5B28CCE70700D81712 /* DetailViewModel.swift in Sources */,
 				D344FC5A28CC0C310004AC6F /* Models.swift in Sources */,
 			);
