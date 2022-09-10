@@ -37,7 +37,9 @@ struct PeopleView: View {
 				}
 			}
 			.navigationTitle("People")
-			.onAppear { vm.fetchUsers() }
+			.task {
+				await vm.fetchUsers()
+			}
 			.toolbar {
 				ToolbarItem(placement: .primaryAction) { create }
 			}
@@ -49,7 +51,11 @@ struct PeopleView: View {
 					}
 				}
 			}
-			.alert(isPresented: $vm.hasError, error: vm.error) {}
+			.alert(isPresented: $vm.hasError, error: vm.error) {
+				Button("Retry") {
+					Task { await vm.fetchUsers() }
+				}
+			}
 			.overlay {
 				if shouldShowSuccess {
 					CheckmarkPopoverView()

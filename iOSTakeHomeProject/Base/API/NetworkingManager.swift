@@ -12,74 +12,42 @@ final class NetworkingManager {
 
 	private init() {}
 
-	func request<T: Decodable>(
-		_ endpoint: Endpoint,
-		type: T.Type,
-		completion: @escaping (Result<T, Error>) -> Void
-	) {
-		guard let url = endpoint.url else {
-			completion(.failure(NetworkingError.invalidURL))
-			return
+	func request<T: Decodable>(_ endpoint: Endpoint, type: T.Type) async throws -> T {
+		guard let url = endpoint.url else { throw NetworkingError.invalidURL }
+
+		let request = buildRequest(from: url, methodType: endpoint.methodType)
+ 
+		let (data, response) = try await URLSession.shared.data(for: request)
+
+		guard let response = response as? HTTPURLResponse,
+			  (200...300) ~= response.statusCode else {
+			let statusCode = (response as! HTTPURLResponse).statusCode
+			throw NetworkingError.invalidStatusCode(statusCode: statusCode)
 		}
+
+		do {
+			let decoder = JSONDecoder()
+			decoder.keyDecodingStrategy = .convertFromSnakeCase
+			return try decoder.decode(T.self, from: data)
+		} catch {
+			throw NetworkingError.failedToDecode(error: error)
+		}
+	}
+
+	func request(_ endpoint: Endpoint) async throws {
+		guard let url = endpoint.url else { throw NetworkingError.invalidURL }
 
 		let request = buildRequest(from: url, methodType: endpoint.methodType)
 
-		URLSession.shared.dataTask(with: request) { data, response, error in
-			if let error = error {
-				completion(.failure(NetworkingError.custom(error)))
-				return
-			}
+		let (_, response) = try await URLSession.shared.data(for: request)
 
-			guard let response = response as? HTTPURLResponse,
-				  (200...300) ~= response.statusCode else {
-				let statusCode = (response as! HTTPURLResponse).statusCode
-				completion(.failure(NetworkingError.invalidStatusCode(statusCode: statusCode)))
-				return
-			}
-
-			guard let data = data else {
-				completion(.failure(NetworkingError.invalidData))
-				return
-			}
-
-			do {
-				let decoder = JSONDecoder()
-				decoder.keyDecodingStrategy = .convertFromSnakeCase
-				let res = try decoder.decode(T.self, from: data)
-				completion(.success(res))
-			} catch {
-				completion(.failure(NetworkingError.failedToDecode(error: error)))
-			}
-		}.resume()
-	}
-
-	func request(
-		_ endpoint: Endpoint,
-		completion: @escaping (Result<Void, Error>) -> Void
-	) {
-		guard let url = endpoint.url else {
-			completion(.failure(NetworkingError.invalidURL))
-			return
+		guard let response = response as? HTTPURLResponse,
+			  (200...300) ~= response.statusCode else {
+			let statusCode = (response as! HTTPURLResponse).statusCode
+			throw NetworkingError.invalidStatusCode(statusCode: statusCode)
 		}
-
-		let request = buildRequest(from: url, methodType: endpoint.methodType)
-
-		URLSession.shared.dataTask(with: request) { data, response, error in
-			if let error = error {
-				completion(.failure(NetworkingError.custom(error)))
-				return
-			}
-
-			guard let response = response as? HTTPURLResponse,
-				  (200...300) ~= response.statusCode else {
-				let statusCode = (response as! HTTPURLResponse).statusCode
-				completion(.failure(NetworkingError.invalidStatusCode(statusCode: statusCode)))
-				return
-			}
-
-			completion(.success(()))
-		}.resume()
 	}
+
 }
 
 extension NetworkingManager {
@@ -103,7 +71,6 @@ extension NetworkingManager {
 }
 
 extension NetworkingManager {
-
 	private func buildRequest(from url: URL, methodType: Endpoint.MethodType) -> URLRequest  {
 		var request = URLRequest(url: url)
 		switch methodType {

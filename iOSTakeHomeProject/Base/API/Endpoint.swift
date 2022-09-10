@@ -18,8 +18,8 @@ extension Endpoint {
 
 	var path: String {
 		switch self {
-			case .people, .create: return "api/users"
-			case .detail(let id): return "api/users\(id)"
+			case .people, .create: return "/api/users"
+			case .detail(let id): return "/api/users/\(id)"
 		}
 	}
 }
