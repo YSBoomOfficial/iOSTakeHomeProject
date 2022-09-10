@@ -25,11 +25,10 @@ final class CreateViewModel: ObservableObject {
 			encoder.keyEncodingStrategy = .convertToSnakeCase
 			let data = try? encoder.encode(person)
 
-			NetworkingManager.shared.request(methodType: .POST(data: data), "https://reqres.in/api/users" + "?delay=3") { [weak self] result in
+			NetworkingManager.shared.request(.create(submissionData: data)) { [weak self] result in
 				DispatchQueue.main.async {
 					switch result {
-						case .success():
-							self?.state = .successful
+						case .success(): self?.state = .successful
 						case let .failure(error):
 							self?.state = .unsuccessful
 							self?.hasError = true

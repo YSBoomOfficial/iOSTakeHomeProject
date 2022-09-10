@@ -29,6 +29,7 @@
 		D34F5E6728CD104200D81712 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E6628CD104200D81712 /* HapticsManager.swift */; };
 		D34F5E6928CD118900D81712 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E6828CD118900D81712 /* SettingsView.swift */; };
 		D34F5E6C28CD125500D81712 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E6B28CD125500D81712 /* UserDefaultsKeys.swift */; };
+		D34F5E6E28CD13A600D81712 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E6D28CD13A600D81712 /* Endpoint.swift */; };
 		D3502BF528CC140100E8E09A /* SingleUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = D3502BF428CC140100E8E09A /* SingleUserData.json */; };
 		D3502BF728CC162300E8E09A /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF628CC162300E8E09A /* PeopleView.swift */; };
 		D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF828CC1BA600E8E09A /* PersonItemView.swift */; };
@@ -60,6 +61,7 @@
 		D34F5E6628CD104200D81712 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		D34F5E6828CD118900D81712 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D34F5E6B28CD125500D81712 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		D34F5E6D28CD13A600D81712 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		D3502BF428CC140100E8E09A /* SingleUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleUserData.json; sourceTree = "<group>"; };
 		D3502BF628CC162300E8E09A /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		D3502BF828CC1BA600E8E09A /* PersonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonItemView.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				D34F5E5628CCDF5400D81712 /* NetworkingManager.swift */,
+				D34F5E6D28CD13A600D81712 /* Endpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				D34F5E5D28CCF8BC00D81712 /* NewPerson.swift in Sources */,
 				D34F5E5928CCE47900D81712 /* PeopleViewModel.swift in Sources */,
 				D34F5E6C28CD125500D81712 /* UserDefaultsKeys.swift in Sources */,
+				D34F5E6E28CD13A600D81712 /* Endpoint.swift in Sources */,
 				D34F5E5428CCDBFD00D81712 /* CreateView.swift in Sources */,
 				D34F5E6428CD094600D81712 /* CreateValidator.swift in Sources */,
 				D34F5E5B28CCE70700D81712 /* DetailViewModel.swift in Sources */,
