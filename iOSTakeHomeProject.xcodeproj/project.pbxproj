@@ -8,23 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		D344FC2828CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC2728CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift */; };
-		D344FC2A28CBFD0F0004AC6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC2928CBFD0F0004AC6F /* ContentView.swift */; };
 		D344FC2C28CBFD100004AC6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D344FC2B28CBFD100004AC6F /* Assets.xcassets */; };
 		D344FC2F28CBFD100004AC6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D344FC2E28CBFD100004AC6F /* Preview Assets.xcassets */; };
 		D344FC3628CBFD590004AC6F /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC3528CBFD590004AC6F /* Symbols.swift */; };
 		D344FC3928CBFEF60004AC6F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC3828CBFEF60004AC6F /* Theme.swift */; };
 		D344FC4E28CC060B0004AC6F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D344FC4D28CC060B0004AC6F /* Launch Screen.storyboard */; };
+		D344FC5128CC09FC0004AC6F /* UsersStaticData.json in Resources */ = {isa = PBXBuildFile; fileRef = D344FC5028CC09FC0004AC6F /* UsersStaticData.json */; };
+		D344FC5528CC0B220004AC6F /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC5428CC0B220004AC6F /* UserDetailResponse.swift */; };
+		D344FC5728CC0BA50004AC6F /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC5628CC0BA50004AC6F /* UsersResponse.swift */; };
+		D344FC5A28CC0C310004AC6F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC5928CC0C310004AC6F /* Models.swift */; };
+		D344FC5D28CC0C7D0004AC6F /* StaticJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC5C28CC0C7D0004AC6F /* StaticJSONMapper.swift */; };
+		D3502BF528CC140100E8E09A /* SingleUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = D3502BF428CC140100E8E09A /* SingleUserData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D344FC2428CBFD0F0004AC6F /* iOSTakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D344FC2728CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTakeHomeProjectApp.swift; sourceTree = "<group>"; };
-		D344FC2928CBFD0F0004AC6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D344FC2B28CBFD100004AC6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D344FC2E28CBFD100004AC6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D344FC3528CBFD590004AC6F /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		D344FC3828CBFEF60004AC6F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D344FC4D28CC060B0004AC6F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D344FC5028CC09FC0004AC6F /* UsersStaticData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UsersStaticData.json; sourceTree = "<group>"; };
+		D344FC5428CC0B220004AC6F /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
+		D344FC5628CC0BA50004AC6F /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
+		D344FC5928CC0C310004AC6F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		D344FC5C28CC0C7D0004AC6F /* StaticJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticJSONMapper.swift; sourceTree = "<group>"; };
+		D3502BF428CC140100E8E09A /* SingleUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleUserData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +68,9 @@
 			isa = PBXGroup;
 			children = (
 				D344FC2728CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift */,
-				D344FC3728CBFDA60004AC6F /* Resources */,
 				D344FC3A28CC00360004AC6F /* Base */,
 				D344FC3B28CC00410004AC6F /* Features */,
-				D344FC2928CBFD0F0004AC6F /* ContentView.swift */,
+				D344FC3728CBFDA60004AC6F /* Resources */,
 				D344FC4D28CC060B0004AC6F /* Launch Screen.storyboard */,
 				D344FC2B28CBFD100004AC6F /* Assets.xcassets */,
 				D344FC2D28CBFD100004AC6F /* Preview Content */,
@@ -80,6 +89,7 @@
 		D344FC3728CBFDA60004AC6F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3502BF328CC132400E8E09A /* JSON */,
 				D344FC3528CBFD590004AC6F /* Symbols.swift */,
 				D344FC3828CBFEF60004AC6F /* Theme.swift */,
 			);
@@ -89,6 +99,8 @@
 		D344FC3A28CC00360004AC6F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				D344FC5828CC0C170004AC6F /* Models */,
+				D344FC5B28CC0C630004AC6F /* Mapper */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -97,8 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				D344FC3C28CC00630004AC6F /* People */,
-				D344FC3D28CC006C0004AC6F /* Create */,
 				D344FC3E28CC00730004AC6F /* Detail */,
+				D344FC3D28CC006C0004AC6F /* Create */,
 				D344FC3F28CC00780004AC6F /* Settings */,
 			);
 			path = Features;
@@ -152,6 +164,7 @@
 		D344FC4128CC009C0004AC6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D344FC5628CC0BA50004AC6F /* UsersResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 		D344FC4628CC00BC0004AC6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D344FC5428CC0B220004AC6F /* UserDetailResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +224,31 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D344FC5828CC0C170004AC6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D344FC5928CC0C310004AC6F /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D344FC5B28CC0C630004AC6F /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				D344FC5C28CC0C7D0004AC6F /* StaticJSONMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		D3502BF328CC132400E8E09A /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				D3502BF428CC140100E8E09A /* SingleUserData.json */,
+				D344FC5028CC09FC0004AC6F /* UsersStaticData.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +309,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D344FC5128CC09FC0004AC6F /* UsersStaticData.json in Resources */,
+				D3502BF528CC140100E8E09A /* SingleUserData.json in Resources */,
 				D344FC4E28CC060B0004AC6F /* Launch Screen.storyboard in Resources */,
 				D344FC2F28CBFD100004AC6F /* Preview Assets.xcassets in Resources */,
 				D344FC2C28CBFD100004AC6F /* Assets.xcassets in Resources */,
@@ -283,10 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D344FC5D28CC0C7D0004AC6F /* StaticJSONMapper.swift in Sources */,
 				D344FC3628CBFD590004AC6F /* Symbols.swift in Sources */,
 				D344FC3928CBFEF60004AC6F /* Theme.swift in Sources */,
-				D344FC2A28CBFD0F0004AC6F /* ContentView.swift in Sources */,
+				D344FC5528CC0B220004AC6F /* UserDetailResponse.swift in Sources */,
 				D344FC2828CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift in Sources */,
+				D344FC5728CC0BA50004AC6F /* UsersResponse.swift in Sources */,
+				D344FC5A28CC0C310004AC6F /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
