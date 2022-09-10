@@ -24,6 +24,7 @@
 		D34F5E5B28CCE70700D81712 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5A28CCE70700D81712 /* DetailViewModel.swift */; };
 		D34F5E5D28CCF8BC00D81712 /* NewPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5C28CCF8BC00D81712 /* NewPerson.swift */; };
 		D34F5E5F28CCF91D00D81712 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E5E28CCF91D00D81712 /* CreateViewModel.swift */; };
+		D34F5E6128CD063300D81712 /* CheckmarkPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F5E6028CD063300D81712 /* CheckmarkPopoverView.swift */; };
 		D3502BF528CC140100E8E09A /* SingleUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = D3502BF428CC140100E8E09A /* SingleUserData.json */; };
 		D3502BF728CC162300E8E09A /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF628CC162300E8E09A /* PeopleView.swift */; };
 		D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF828CC1BA600E8E09A /* PersonItemView.swift */; };
@@ -50,6 +51,7 @@
 		D34F5E5A28CCE70700D81712 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D34F5E5C28CCF8BC00D81712 /* NewPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPerson.swift; sourceTree = "<group>"; };
 		D34F5E5E28CCF91D00D81712 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
+		D34F5E6028CD063300D81712 /* CheckmarkPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkPopoverView.swift; sourceTree = "<group>"; };
 		D3502BF428CC140100E8E09A /* SingleUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleUserData.json; sourceTree = "<group>"; };
 		D3502BF628CC162300E8E09A /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		D3502BF828CC1BA600E8E09A /* PersonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonItemView.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				D3502BFB28CC1CB800E8E09A /* PillView.swift */,
+				D34F5E6028CD063300D81712 /* CheckmarkPopoverView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34F5E6128CD063300D81712 /* CheckmarkPopoverView.swift in Sources */,
 				D344FC5D28CC0C7D0004AC6F /* StaticJSONMapper.swift in Sources */,
 				D3502BFC28CC1CB800E8E09A /* PillView.swift in Sources */,
 				D344FC3628CBFD590004AC6F /* Symbols.swift in Sources */,

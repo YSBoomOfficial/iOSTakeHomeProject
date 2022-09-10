@@ -11,6 +11,8 @@ struct CreateView: View {
 	@Environment(\.dismiss) var dismiss
 
 	@StateObject private var vm = CreateViewModel()
+	let successfulAction: () -> Void
+
 
 	var body: some View {
 		NavigationView {
@@ -28,7 +30,10 @@ struct CreateView: View {
 				ToolbarItem(placement: .primaryAction) { done }
 			}
 			.onChange(of: vm.state) { formState in
-				if formState == .successful { dismiss() }
+				if formState == .successful {
+					dismiss()
+					successfulAction()
+				}
 			}
 			.alert(isPresented: $vm.hasError, error: vm.error) {}
 			.overlay {
@@ -41,8 +46,10 @@ struct CreateView: View {
 
 struct CreateView_Previews: PreviewProvider {
 	static var previews: some View {
-		CreateView()
-			.preferredColorScheme(.dark)
+		CreateView {
+
+		}
+		.preferredColorScheme(.dark)
 	}
 }
 
