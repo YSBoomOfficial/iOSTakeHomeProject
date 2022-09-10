@@ -11,7 +11,17 @@ import SwiftUI
 struct iOSTakeHomeProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			TabView {
+				PeopleView()
+					.tabItem {
+						Label {
+							Text("Home")
+						} icon: {
+							Symbols.person
+						}
+
+					}
+			}
         }
     }
 }
