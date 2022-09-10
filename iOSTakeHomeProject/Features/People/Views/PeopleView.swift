@@ -10,14 +10,16 @@ import SwiftUI
 struct PeopleView: View {
 	private let columns = Array(repeating: GridItem(.flexible()), count: 2)
 
+	@State private var users = [User]()
+
 	var body: some View {
 		NavigationView {
 			ZStack {
 				background
 				ScrollView {
 					LazyVGrid(columns: columns, spacing: 16) {
-						ForEach(0...5, id: \.self) { item in
-							PersonItemView(user: item)
+						ForEach(users, id: \.id) { user in
+							PersonItemView(user: user)
 						}
 					}
 					.padding()
@@ -26,6 +28,16 @@ struct PeopleView: View {
 			.navigationTitle("People")
 			.toolbar {
 				ToolbarItem(placement: .primaryAction) { create }
+			}
+			.onAppear {
+				do {
+					users = try StaticJSONMapper.decode(
+						file: "UsersStaticData",
+						type: UsersResponse.self
+					).data
+				} catch {
+					fatalError("\(error)")
+				}
 			}
 		}
 	}
