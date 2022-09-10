@@ -22,6 +22,7 @@
 		D3502BF728CC162300E8E09A /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF628CC162300E8E09A /* PeopleView.swift */; };
 		D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BF828CC1BA600E8E09A /* PersonItemView.swift */; };
 		D3502BFC28CC1CB800E8E09A /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BFB28CC1CB800E8E09A /* PillView.swift */; };
+		D3502BFE28CC214100E8E09A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BFD28CC214100E8E09A /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		D3502BF628CC162300E8E09A /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		D3502BF828CC1BA600E8E09A /* PersonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonItemView.swift; sourceTree = "<group>"; };
 		D3502BFB28CC1CB800E8E09A /* PillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
+		D3502BFD28CC214100E8E09A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 		D344FC4828CC00BC0004AC6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3502BFD28CC214100E8E09A /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				D344FC3628CBFD590004AC6F /* Symbols.swift in Sources */,
 				D344FC3928CBFEF60004AC6F /* Theme.swift in Sources */,
 				D3502BF728CC162300E8E09A /* PeopleView.swift in Sources */,
+				D3502BFE28CC214100E8E09A /* DetailView.swift in Sources */,
 				D344FC5528CC0B220004AC6F /* UserDetailResponse.swift in Sources */,
 				D344FC2828CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift in Sources */,
 				D344FC5728CC0BA50004AC6F /* UsersResponse.swift in Sources */,
