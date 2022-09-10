@@ -8,7 +8,7 @@
 import Foundation
 
 enum Endpoint {
-	case people
+	case people(page: Int)
 	case detail(id: Int)
 	case create(submissionData: Data?)
 }
@@ -38,10 +38,16 @@ extension Endpoint {
 		components.host = host
 		components.path = path
 
+		var requestQueryItems = queryItems?.compactMap { item in
+			URLQueryItem(name: item.key, value: item.value )
+		}
+
 		#if DEBUG
-		components.queryItems = [.init(name: "delay", value: "1")]
+		requestQueryItems?.append(.init(name: "delay", value: "1"))
 		#endif
-		
+
+		components.queryItems = requestQueryItems
+
 		return components.url
 	}
 
@@ -51,5 +57,14 @@ extension Endpoint {
 			case let .create(data): return . POST(data: data)
 		}
 	}
-}
 
+	var queryItems: [String: String]? {
+		switch self {
+			case .people(let page):
+				return ["page": "\(page)"]
+			default:
+				return nil
+		}
+	}
+
+}

@@ -31,10 +31,17 @@ struct PeopleView: View {
 									DetailView(userID: user.id)
 								} label: {
 									PersonItemView(user: user)
+										.task {
+											if vm.hasReachedEnd(of: user) && !vm.isFetching { await vm.fetchNextSetOfUsers() }
+										}
 								}
 							}
+						}.padding()
+					}
+					.overlay(alignment: .bottom) {
+						if vm.isFetching {
+							ProgressView("Loading…")
 						}
-						.padding()
 					}
 				}
 			}
@@ -44,27 +51,23 @@ struct PeopleView: View {
 					await vm.fetchUsers()
 					hasAppeared = true
 				}
-			}
-			.toolbar {
+			}.toolbar {
 				ToolbarItem(placement: .primaryAction) { create }
 				ToolbarItem(placement: .navigationBarLeading) { refresh }
-			}
-			.sheet(isPresented: $shouldShowCreate) {
+			}.sheet(isPresented: $shouldShowCreate) {
 				CreateView {
 					haptic(.success)
 					withAnimation(.spring().delay(0.25)) {
 						shouldShowSuccess = true
 					}
 				}
-			}
-			.alert(isPresented: $vm.hasError, error: vm.error) {
+			}.alert(isPresented: $vm.hasError, error: vm.error) {
 				Button("Cancel", role: .cancel) {}
 
 				Button("Retry") {
 					Task { await vm.fetchUsers() }
 				}
-			}
-			.overlay {
+			}.overlay {
 				if shouldShowSuccess {
 					CheckmarkPopoverView()
 						.transition(.scale.combined(with: .opacity))
