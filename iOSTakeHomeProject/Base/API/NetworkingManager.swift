@@ -12,12 +12,12 @@ final class NetworkingManager {
 
 	private init() {}
 
-	func request<T: Decodable>(_ endpoint: Endpoint, type: T.Type) async throws -> T {
+	func request<T: Decodable>(session: URLSession = .shared, _ endpoint: Endpoint, type: T.Type) async throws -> T {
 		guard let url = endpoint.url else { throw NetworkingError.invalidURL }
 
 		let request = buildRequest(from: url, methodType: endpoint.methodType)
  
-		let (data, response) = try await URLSession.shared.data(for: request)
+		let (data, response) = try await session.data(for: request)
 
 		guard let response = response as? HTTPURLResponse,
 			  (200...300) ~= response.statusCode else {
@@ -25,21 +25,17 @@ final class NetworkingManager {
 			throw NetworkingError.invalidStatusCode(statusCode: statusCode)
 		}
 
-		do {
-			let decoder = JSONDecoder()
-			decoder.keyDecodingStrategy = .convertFromSnakeCase
-			return try decoder.decode(T.self, from: data)
-		} catch {
-			throw NetworkingError.failedToDecode(error: error)
-		}
+		let decoder = JSONDecoder()
+		decoder.keyDecodingStrategy = .convertFromSnakeCase
+		return try decoder.decode(T.self, from: data)
 	}
 
-	func request(_ endpoint: Endpoint) async throws {
+	func request(session: URLSession = .shared, _ endpoint: Endpoint) async throws {
 		guard let url = endpoint.url else { throw NetworkingError.invalidURL }
 
 		let request = buildRequest(from: url, methodType: endpoint.methodType)
 
-		let (_, response) = try await URLSession.shared.data(for: request)
+		let (_, response) = try await session.data(for: request)
 
 		guard let response = response as? HTTPURLResponse,
 			  (200...300) ~= response.statusCode else {
@@ -66,6 +62,21 @@ extension NetworkingManager {
 				case .failedToDecode(let error): return "Could not decode response. \(error.localizedDescription)"
 				case .custom(let error): return "Something went wrong. \(error.localizedDescription)."
 			}
+		}
+	}
+}
+
+extension NetworkingManager.NetworkingError: Equatable {
+	static func ==(lhs: NetworkingManager.NetworkingError, rhs: NetworkingManager.NetworkingError) -> Bool {
+		switch (lhs, rhs) {
+			case (.invalidURL, .invalidURL), (.invalidData, .invalidData): return true
+			case (.invalidStatusCode(let lhsCode), .invalidStatusCode(let rhsCode)):
+				return lhsCode == rhsCode
+			case (.custom(let lhsError), .custom(let rhsError)):
+				return lhsError.localizedDescription == rhsError.localizedDescription
+			case (.failedToDecode(let lhsError), .failedToDecode(let rhsError)):
+				return lhsError.localizedDescription == rhsError.localizedDescription
+			default: return false
 		}
 	}
 }

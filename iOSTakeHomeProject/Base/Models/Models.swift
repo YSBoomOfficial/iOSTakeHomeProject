@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - User
-struct User: Codable {
+struct User: Codable, Equatable {
 	let id: Int
 	let email: String
 	let firstName: String
@@ -17,7 +17,7 @@ struct User: Codable {
 }
 
 // MARK: - Support
-struct Support: Codable {
+struct Support: Codable, Equatable {
 	let url: String
 	let text: String
 }

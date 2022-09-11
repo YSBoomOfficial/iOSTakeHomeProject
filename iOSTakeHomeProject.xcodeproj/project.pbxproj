@@ -37,6 +37,9 @@
 		D3502BFE28CC214100E8E09A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3502BFD28CC214100E8E09A /* DetailView.swift */; };
 		D352B95C28CD4A0C008BD282 /* JSONMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B95B28CD4A0C008BD282 /* JSONMapperTests.swift */; };
 		D352B95F28CD5425008BD282 /* CreateFormValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B95E28CD5425008BD282 /* CreateFormValidatorTests.swift */; };
+		D352B96328CD5CD6008BD282 /* NetworkingEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B96228CD5CD6008BD282 /* NetworkingEndpointTests.swift */; };
+		D352B96628CD61F9008BD282 /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B96528CD61F9008BD282 /* MockURLSessionProtocol.swift */; };
+		D352B96928CD63AC008BD282 /* NetworkingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B96828CD63AC008BD282 /* NetworkingManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		D352B95128CD49D8008BD282 /* iOSTakeHomeProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTakeHomeProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D352B95B28CD4A0C008BD282 /* JSONMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapperTests.swift; sourceTree = "<group>"; };
 		D352B95E28CD5425008BD282 /* CreateFormValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFormValidatorTests.swift; sourceTree = "<group>"; };
+		D352B96228CD5CD6008BD282 /* NetworkingEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingEndpointTests.swift; sourceTree = "<group>"; };
+		D352B96528CD61F9008BD282 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
+		D352B96828CD63AC008BD282 /* NetworkingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,8 +372,9 @@
 		D352B95228CD49D8008BD282 /* iOSTakeHomeProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				D352B95D28CD53FC008BD282 /* Form */,
 				D352B95A28CD49F6008BD282 /* Mapper */,
+				D352B95D28CD53FC008BD282 /* Form */,
+				D352B96028CD5C88008BD282 /* Networking */,
 			);
 			path = iOSTakeHomeProjectTests;
 			sourceTree = "<group>";
@@ -386,6 +393,40 @@
 				D352B95E28CD5425008BD282 /* CreateFormValidatorTests.swift */,
 			);
 			path = Form;
+			sourceTree = "<group>";
+		};
+		D352B96028CD5C88008BD282 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D352B96428CD61D9008BD282 /* Mocks */,
+				D352B96128CD5CB9008BD282 /* Endpoint */,
+				D352B96728CD6392008BD282 /* NetworkingManager */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D352B96128CD5CB9008BD282 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				D352B96228CD5CD6008BD282 /* NetworkingEndpointTests.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		D352B96428CD61D9008BD282 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D352B96528CD61F9008BD282 /* MockURLSessionProtocol.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D352B96728CD6392008BD282 /* NetworkingManager */ = {
+			isa = PBXGroup;
+			children = (
+				D352B96828CD63AC008BD282 /* NetworkingManagerTests.swift */,
+			);
+			path = NetworkingManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,8 +562,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D352B96928CD63AC008BD282 /* NetworkingManagerTests.swift in Sources */,
 				D352B95F28CD5425008BD282 /* CreateFormValidatorTests.swift in Sources */,
 				D352B95C28CD4A0C008BD282 /* JSONMapperTests.swift in Sources */,
+				D352B96628CD61F9008BD282 /* MockURLSessionProtocol.swift in Sources */,
+				D352B96328CD5CD6008BD282 /* NetworkingEndpointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
