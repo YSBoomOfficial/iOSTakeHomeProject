@@ -9,6 +9,7 @@ import Foundation
 
 final class PeopleViewModel: ObservableObject {
 	private let networkingManager: NetworkingManaging
+	
 	@Published private(set) var users = [User]()
 	@Published private(set) var viewState: ViewState?
 	@Published private(set) var error: NetworkingManager.NetworkingError?

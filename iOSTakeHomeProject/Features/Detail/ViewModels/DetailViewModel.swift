@@ -9,6 +9,7 @@ import Foundation
 
 final class DetailViewModel: ObservableObject {
 	private let networkingManager: NetworkingManaging
+	
 	@Published private(set) var userInfo: UserDetailResponse?
 	@Published private(set) var isLoading = false
 	@Published private(set) var error: NetworkingManager.NetworkingError?
