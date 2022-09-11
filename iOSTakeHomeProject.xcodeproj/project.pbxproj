@@ -58,6 +58,8 @@
 		D38C31DB28CE2F5F0095C52D /* CreateValidatorFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31A828CE21AE0095C52D /* CreateValidatorFailureMock.swift */; };
 		D38C31DC28CE2F5F0095C52D /* NetworkingManagerUserDetailResponseFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319828CE19920095C52D /* NetworkingManagerUserDetailResponseFailureMock.swift */; };
 		D38C31DE28CE364B0095C52D /* PeopleFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31DD28CE364B0095C52D /* PeopleFailureUITests.swift */; };
+		D38C31E128CE41230095C52D /* DetailsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31E028CE41230095C52D /* DetailsUITests.swift */; };
+		D38C31E328CE45F70095C52D /* DetailsFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31E228CE45F70095C52D /* DetailsFailureUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		D38C31C028CE2A1B0095C52D /* PeopleScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleScreenUITests.swift; sourceTree = "<group>"; };
 		D38C31C328CE2C670095C52D /* UITestingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingHelper.swift; sourceTree = "<group>"; };
 		D38C31DD28CE364B0095C52D /* PeopleFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleFailureUITests.swift; sourceTree = "<group>"; };
+		D38C31E028CE41230095C52D /* DetailsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUITests.swift; sourceTree = "<group>"; };
+		D38C31E228CE45F70095C52D /* DetailsFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFailureUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -538,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				D38C31BF28CE29F90095C52D /* People */,
+				D38C31DF28CE40DD0095C52D /* Detail */,
 			);
 			path = iOSTakeHomeProjectUITests;
 			sourceTree = "<group>";
@@ -577,6 +582,15 @@
 				D38C31A828CE21AE0095C52D /* CreateValidatorFailureMock.swift */,
 			);
 			path = Validation;
+			sourceTree = "<group>";
+		};
+		D38C31DF28CE40DD0095C52D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D38C31E028CE41230095C52D /* DetailsUITests.swift */,
+				D38C31E228CE45F70095C52D /* DetailsFailureUITests.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -771,6 +785,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38C31E128CE41230095C52D /* DetailsUITests.swift in Sources */,
+				D38C31E328CE45F70095C52D /* DetailsFailureUITests.swift in Sources */,
 				D38C31C128CE2A1B0095C52D /* PeopleScreenUITests.swift in Sources */,
 				D38C31DE28CE364B0095C52D /* PeopleFailureUITests.swift in Sources */,
 			);

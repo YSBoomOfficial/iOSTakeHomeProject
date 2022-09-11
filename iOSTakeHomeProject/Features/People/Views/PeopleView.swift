@@ -19,7 +19,7 @@ struct PeopleView: View {
 	init() {
 		#if DEBUG
 		if UITestingHelper.isUITesting {
-			let mock: NetworkingManaging = UITestingHelper.networkingSuccessful ? NetworkingManagerUsersResponseSuccessMock() : NetworkingManagerUsersResponseFailureMock()
+			let mock: NetworkingManaging = UITestingHelper.isPeopleNetworkingSuccessful ? NetworkingManagerUsersResponseSuccessMock() : NetworkingManagerUsersResponseFailureMock()
 			_vm = .init(wrappedValue: .init(networkingManager: mock))
 		} else {
 			_vm = .init(wrappedValue: .init())

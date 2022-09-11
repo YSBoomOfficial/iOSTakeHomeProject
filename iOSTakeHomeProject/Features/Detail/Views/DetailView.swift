@@ -9,7 +9,22 @@ import SwiftUI
 
 struct DetailView: View {
 	let userID: Int
-	@StateObject private var vm = DetailViewModel()
+	@StateObject private var vm: DetailViewModel
+
+	internal init(userID: Int) {
+		self.userID = userID
+
+		#if DEBUG
+		if UITestingHelper.isUITesting {
+			let mock: NetworkingManaging = UITestingHelper.isDetailsNetworkingSuccessful ? NetworkingManagerUserDetailResponseSuccessMock() : NetworkingManagerUserDetailResponseFailureMock()
+			_vm = .init(wrappedValue: .init(networkingManager: mock))
+		} else {
+			_vm = .init(wrappedValue: .init())
+		}
+		#else
+		_vm = .init(wrappedValue: .init())
+		#endif
+	}
 
 	var body: some View {
 		ZStack {
@@ -36,7 +51,7 @@ struct DetailView: View {
 				}
 			}
 		}
-		.navigationTitle("Detail")
+		.navigationTitle("Details")
 		.task {
 			await vm.fetchDetails(for: userID)
 		}
