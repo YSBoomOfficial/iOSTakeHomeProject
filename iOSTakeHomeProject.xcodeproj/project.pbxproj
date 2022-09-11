@@ -40,6 +40,10 @@
 		D352B96328CD5CD6008BD282 /* NetworkingEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B96228CD5CD6008BD282 /* NetworkingEndpointTests.swift */; };
 		D352B96628CD61F9008BD282 /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B96528CD61F9008BD282 /* MockURLSessionProtocol.swift */; };
 		D352B96928CD63AC008BD282 /* NetworkingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B96828CD63AC008BD282 /* NetworkingManagerTests.swift */; };
+		D38C318D28CE101D0095C52D /* PeopleViewModelSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C318C28CE101D0095C52D /* PeopleViewModelSuccessTests.swift */; };
+		D38C318F28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C318E28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift */; };
+		D38C319128CE15FE0095C52D /* PeopleViewModelFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319028CE15FE0095C52D /* PeopleViewModelFailureTests.swift */; };
+		D38C319328CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319228CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,10 @@
 		D352B96228CD5CD6008BD282 /* NetworkingEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingEndpointTests.swift; sourceTree = "<group>"; };
 		D352B96528CD61F9008BD282 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
 		D352B96828CD63AC008BD282 /* NetworkingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerTests.swift; sourceTree = "<group>"; };
+		D38C318C28CE101D0095C52D /* PeopleViewModelSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModelSuccessTests.swift; sourceTree = "<group>"; };
+		D38C318E28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserResponseSuccessMock.swift; sourceTree = "<group>"; };
+		D38C319028CE15FE0095C52D /* PeopleViewModelFailureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModelFailureTests.swift; sourceTree = "<group>"; };
+		D38C319228CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserResponseFailureMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,8 +381,9 @@
 			isa = PBXGroup;
 			children = (
 				D352B95A28CD49F6008BD282 /* Mapper */,
-				D352B95D28CD53FC008BD282 /* Form */,
 				D352B96028CD5C88008BD282 /* Networking */,
+				D352B95D28CD53FC008BD282 /* Form */,
+				D38C318B28CE0FDE0095C52D /* People */,
 			);
 			path = iOSTakeHomeProjectTests;
 			sourceTree = "<group>";
@@ -417,6 +426,8 @@
 			isa = PBXGroup;
 			children = (
 				D352B96528CD61F9008BD282 /* MockURLSessionProtocol.swift */,
+				D38C318E28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift */,
+				D38C319228CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -427,6 +438,15 @@
 				D352B96828CD63AC008BD282 /* NetworkingManagerTests.swift */,
 			);
 			path = NetworkingManager;
+			sourceTree = "<group>";
+		};
+		D38C318B28CE0FDE0095C52D /* People */ = {
+			isa = PBXGroup;
+			children = (
+				D38C318C28CE101D0095C52D /* PeopleViewModelSuccessTests.swift */,
+				D38C319028CE15FE0095C52D /* PeopleViewModelFailureTests.swift */,
+			);
+			path = People;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -562,9 +582,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38C319128CE15FE0095C52D /* PeopleViewModelFailureTests.swift in Sources */,
 				D352B96928CD63AC008BD282 /* NetworkingManagerTests.swift in Sources */,
+				D38C318F28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift in Sources */,
 				D352B95F28CD5425008BD282 /* CreateFormValidatorTests.swift in Sources */,
+				D38C319328CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift in Sources */,
 				D352B95C28CD4A0C008BD282 /* JSONMapperTests.swift in Sources */,
+				D38C318D28CE101D0095C52D /* PeopleViewModelSuccessTests.swift in Sources */,
 				D352B96628CD61F9008BD282 /* MockURLSessionProtocol.swift in Sources */,
 				D352B96328CD5CD6008BD282 /* NetworkingEndpointTests.swift in Sources */,
 			);
