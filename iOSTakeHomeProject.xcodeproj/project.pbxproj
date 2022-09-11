@@ -41,9 +41,13 @@
 		D352B96628CD61F9008BD282 /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B96528CD61F9008BD282 /* MockURLSessionProtocol.swift */; };
 		D352B96928CD63AC008BD282 /* NetworkingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352B96828CD63AC008BD282 /* NetworkingManagerTests.swift */; };
 		D38C318D28CE101D0095C52D /* PeopleViewModelSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C318C28CE101D0095C52D /* PeopleViewModelSuccessTests.swift */; };
-		D38C318F28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C318E28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift */; };
+		D38C318F28CE108C0095C52D /* NetworkingManagerUsersResponseSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C318E28CE108C0095C52D /* NetworkingManagerUsersResponseSuccessMock.swift */; };
 		D38C319128CE15FE0095C52D /* PeopleViewModelFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319028CE15FE0095C52D /* PeopleViewModelFailureTests.swift */; };
-		D38C319328CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319228CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift */; };
+		D38C319328CE16290095C52D /* NetworkingManagerUsersResponseFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319228CE16290095C52D /* NetworkingManagerUsersResponseFailureMock.swift */; };
+		D38C319728CE18900095C52D /* NetworkingManagerUserDetailResponseSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319628CE18900095C52D /* NetworkingManagerUserDetailResponseSuccessMock.swift */; };
+		D38C319928CE19920095C52D /* NetworkingManagerUserDetailResponseFailureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319828CE19920095C52D /* NetworkingManagerUserDetailResponseFailureMock.swift */; };
+		D38C319C28CE19F80095C52D /* DetailViewModelSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319B28CE19F80095C52D /* DetailViewModelSuccessTests.swift */; };
+		D38C319E28CE1A2E0095C52D /* DetailViewModelFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C319D28CE1A2E0095C52D /* DetailViewModelFailureTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,9 +97,13 @@
 		D352B96528CD61F9008BD282 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
 		D352B96828CD63AC008BD282 /* NetworkingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerTests.swift; sourceTree = "<group>"; };
 		D38C318C28CE101D0095C52D /* PeopleViewModelSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModelSuccessTests.swift; sourceTree = "<group>"; };
-		D38C318E28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserResponseSuccessMock.swift; sourceTree = "<group>"; };
+		D38C318E28CE108C0095C52D /* NetworkingManagerUsersResponseSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUsersResponseSuccessMock.swift; sourceTree = "<group>"; };
 		D38C319028CE15FE0095C52D /* PeopleViewModelFailureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModelFailureTests.swift; sourceTree = "<group>"; };
-		D38C319228CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserResponseFailureMock.swift; sourceTree = "<group>"; };
+		D38C319228CE16290095C52D /* NetworkingManagerUsersResponseFailureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUsersResponseFailureMock.swift; sourceTree = "<group>"; };
+		D38C319628CE18900095C52D /* NetworkingManagerUserDetailResponseSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserDetailResponseSuccessMock.swift; sourceTree = "<group>"; };
+		D38C319828CE19920095C52D /* NetworkingManagerUserDetailResponseFailureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerUserDetailResponseFailureMock.swift; sourceTree = "<group>"; };
+		D38C319B28CE19F80095C52D /* DetailViewModelSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelSuccessTests.swift; sourceTree = "<group>"; };
+		D38C319D28CE1A2E0095C52D /* DetailViewModelFailureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelFailureTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +392,7 @@
 				D352B96028CD5C88008BD282 /* Networking */,
 				D352B95D28CD53FC008BD282 /* Form */,
 				D38C318B28CE0FDE0095C52D /* People */,
+				D38C319A28CE19C60095C52D /* Details */,
 			);
 			path = iOSTakeHomeProjectTests;
 			sourceTree = "<group>";
@@ -426,8 +435,8 @@
 			isa = PBXGroup;
 			children = (
 				D352B96528CD61F9008BD282 /* MockURLSessionProtocol.swift */,
-				D38C318E28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift */,
-				D38C319228CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift */,
+				D38C319428CE184B0095C52D /* User Response */,
+				D38C319528CE18540095C52D /* User Details */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -447,6 +456,33 @@
 				D38C319028CE15FE0095C52D /* PeopleViewModelFailureTests.swift */,
 			);
 			path = People;
+			sourceTree = "<group>";
+		};
+		D38C319428CE184B0095C52D /* User Response */ = {
+			isa = PBXGroup;
+			children = (
+				D38C318E28CE108C0095C52D /* NetworkingManagerUsersResponseSuccessMock.swift */,
+				D38C319228CE16290095C52D /* NetworkingManagerUsersResponseFailureMock.swift */,
+			);
+			path = "User Response";
+			sourceTree = "<group>";
+		};
+		D38C319528CE18540095C52D /* User Details */ = {
+			isa = PBXGroup;
+			children = (
+				D38C319628CE18900095C52D /* NetworkingManagerUserDetailResponseSuccessMock.swift */,
+				D38C319828CE19920095C52D /* NetworkingManagerUserDetailResponseFailureMock.swift */,
+			);
+			path = "User Details";
+			sourceTree = "<group>";
+		};
+		D38C319A28CE19C60095C52D /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				D38C319B28CE19F80095C52D /* DetailViewModelSuccessTests.swift */,
+				D38C319D28CE1A2E0095C52D /* DetailViewModelFailureTests.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,14 +619,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38C319128CE15FE0095C52D /* PeopleViewModelFailureTests.swift in Sources */,
+				D38C319E28CE1A2E0095C52D /* DetailViewModelFailureTests.swift in Sources */,
 				D352B96928CD63AC008BD282 /* NetworkingManagerTests.swift in Sources */,
-				D38C318F28CE108C0095C52D /* NetworkingManagerUserResponseSuccessMock.swift in Sources */,
+				D38C319728CE18900095C52D /* NetworkingManagerUserDetailResponseSuccessMock.swift in Sources */,
+				D38C318F28CE108C0095C52D /* NetworkingManagerUsersResponseSuccessMock.swift in Sources */,
 				D352B95F28CD5425008BD282 /* CreateFormValidatorTests.swift in Sources */,
-				D38C319328CE16290095C52D /* NetworkingManagerUserResponseFailureMock.swift in Sources */,
+				D38C319328CE16290095C52D /* NetworkingManagerUsersResponseFailureMock.swift in Sources */,
 				D352B95C28CD4A0C008BD282 /* JSONMapperTests.swift in Sources */,
 				D38C318D28CE101D0095C52D /* PeopleViewModelSuccessTests.swift in Sources */,
 				D352B96628CD61F9008BD282 /* MockURLSessionProtocol.swift in Sources */,
+				D38C319C28CE19F80095C52D /* DetailViewModelSuccessTests.swift in Sources */,
 				D352B96328CD5CD6008BD282 /* NetworkingEndpointTests.swift in Sources */,
+				D38C319928CE19920095C52D /* NetworkingManagerUserDetailResponseFailureMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

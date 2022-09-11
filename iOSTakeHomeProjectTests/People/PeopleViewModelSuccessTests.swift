@@ -14,7 +14,7 @@ class PeopleViewModelSuccessTests: XCTestCase {
 
 	override func setUp() {
 		super.setUp()
-		networkingMock = NetworkingManagerUserResponseSuccessMock()
+		networkingMock = NetworkingManagerUsersResponseSuccessMock()
 		vm = .init(networkingManager: networkingMock)
 	}
 

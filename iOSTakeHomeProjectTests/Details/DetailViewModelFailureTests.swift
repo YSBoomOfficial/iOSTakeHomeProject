@@ -1,5 +1,5 @@
 //
-//  PeopleViewModelFailureTests.swift
+//  DetailViewModelFailureTests.swift
 //  iOSTakeHomeProjectTests
 //
 //  Created by Yash Shah on 11/09/2022.
@@ -8,13 +8,13 @@
 import XCTest
 @testable import iOSTakeHomeProject
 
-class PeopleViewModelFailureTests: XCTestCase {
+class DetailViewModelFailureTests: XCTestCase {
 	private var networkingMock: NetworkingManaging!
-	private var vm: PeopleViewModel!
+	private var vm: DetailViewModel!
 
 	override func setUp() {
 		super.setUp()
-		networkingMock = NetworkingManagerUsersResponseFailureMock()
+		networkingMock =  NetworkingManagerUserDetailResponseFailureMock()
 		vm = .init(networkingManager: networkingMock)
 	}
 
@@ -28,10 +28,13 @@ class PeopleViewModelFailureTests: XCTestCase {
 		XCTAssertFalse(vm.isLoading, "ViewModel shouldn't be loading any data, before fetching")
 		defer {
 			XCTAssertFalse(vm.isLoading, "ViewModel shouldn't be loading any data, after fetching")
-			XCTAssertEqual(vm.viewState, .finished, "ViewModel's view state should be finished")
 		}
-		await vm.fetchUsers()
-		XCTAssertTrue(vm.hasError, "View Model hasError should be true")
-		XCTAssertNotNil(vm.error, "View Model Error should not be nil")
+		await vm.fetchDetails(for: 1)
+
+		XCTAssertTrue(vm.hasError, "ViewModel hasError should be true")
+		XCTAssertNotNil(vm.error, "ViewModel Error should not be nil")
+
 	}
+
+
 }
