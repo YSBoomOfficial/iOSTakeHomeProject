@@ -121,7 +121,9 @@ private extension PeopleView {
 					.system(.headline, design: .rounded)
 					.bold()
 				)
-		}.disabled(vm.isLoading)
+		}
+		.disabled(vm.isLoading)
+		.accessibilityIdentifier("createButton")
 	}
 
 	var refresh: some View {

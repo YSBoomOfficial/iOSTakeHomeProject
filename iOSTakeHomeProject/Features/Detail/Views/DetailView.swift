@@ -11,7 +11,7 @@ struct DetailView: View {
 	let userID: Int
 	@StateObject private var vm: DetailViewModel
 
-	internal init(userID: Int) {
+	init(userID: Int) {
 		self.userID = userID
 
 		#if DEBUG

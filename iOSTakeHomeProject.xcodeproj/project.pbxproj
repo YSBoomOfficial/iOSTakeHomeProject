@@ -60,6 +60,10 @@
 		D38C31DE28CE364B0095C52D /* PeopleFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31DD28CE364B0095C52D /* PeopleFailureUITests.swift */; };
 		D38C31E128CE41230095C52D /* DetailsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31E028CE41230095C52D /* DetailsUITests.swift */; };
 		D38C31E328CE45F70095C52D /* DetailsFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31E228CE45F70095C52D /* DetailsFailureUITests.swift */; };
+		D38C31E628CE488F0095C52D /* CreateScreenUIValidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31E528CE488F0095C52D /* CreateScreenUIValidTests.swift */; };
+		D38C31E828CE4B510095C52D /* CreateScreenFormValidationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31E728CE4B510095C52D /* CreateScreenFormValidationUITests.swift */; };
+		D38C31EA28CE4FD30095C52D /* CreateFailureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31E928CE4FD30095C52D /* CreateFailureUITests.swift */; };
+		D38C31EC28CE51F60095C52D /* CreateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C31EB28CE51F60095C52D /* CreateUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +140,10 @@
 		D38C31DD28CE364B0095C52D /* PeopleFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleFailureUITests.swift; sourceTree = "<group>"; };
 		D38C31E028CE41230095C52D /* DetailsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUITests.swift; sourceTree = "<group>"; };
 		D38C31E228CE45F70095C52D /* DetailsFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFailureUITests.swift; sourceTree = "<group>"; };
+		D38C31E528CE488F0095C52D /* CreateScreenUIValidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenUIValidTests.swift; sourceTree = "<group>"; };
+		D38C31E728CE4B510095C52D /* CreateScreenFormValidationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenFormValidationUITests.swift; sourceTree = "<group>"; };
+		D38C31E928CE4FD30095C52D /* CreateFailureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFailureUITests.swift; sourceTree = "<group>"; };
+		D38C31EB28CE51F60095C52D /* CreateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,6 +551,7 @@
 			children = (
 				D38C31BF28CE29F90095C52D /* People */,
 				D38C31DF28CE40DD0095C52D /* Detail */,
+				D38C31E428CE486B0095C52D /* Create */,
 			);
 			path = iOSTakeHomeProjectUITests;
 			sourceTree = "<group>";
@@ -591,6 +600,17 @@
 				D38C31E228CE45F70095C52D /* DetailsFailureUITests.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		D38C31E428CE486B0095C52D /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				D38C31E528CE488F0095C52D /* CreateScreenUIValidTests.swift */,
+				D38C31E728CE4B510095C52D /* CreateScreenFormValidationUITests.swift */,
+				D38C31E928CE4FD30095C52D /* CreateFailureUITests.swift */,
+				D38C31EB28CE51F60095C52D /* CreateUITests.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -785,9 +805,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38C31E828CE4B510095C52D /* CreateScreenFormValidationUITests.swift in Sources */,
+				D38C31E628CE488F0095C52D /* CreateScreenUIValidTests.swift in Sources */,
 				D38C31E128CE41230095C52D /* DetailsUITests.swift in Sources */,
+				D38C31EC28CE51F60095C52D /* CreateUITests.swift in Sources */,
 				D38C31E328CE45F70095C52D /* DetailsFailureUITests.swift in Sources */,
 				D38C31C128CE2A1B0095C52D /* PeopleScreenUITests.swift in Sources */,
+				D38C31EA28CE4FD30095C52D /* CreateFailureUITests.swift in Sources */,
 				D38C31DE28CE364B0095C52D /* PeopleFailureUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

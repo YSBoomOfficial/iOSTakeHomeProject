@@ -12,7 +12,21 @@ struct CreateView: View {
 
 	@FocusState private var focusedField: Field?
 	@StateObject private var vm = CreateViewModel()
-	let successfulAction: () -> Void
+	private let successfulAction: () -> Void
+
+	init(successfulAction: @escaping () -> Void) {
+		self.successfulAction = successfulAction
+		#if DEBUG
+		if UITestingHelper.isUITesting {
+			let mock: NetworkingManaging = UITestingHelper.isCreateNetworkingSuccessful ? NetworkingManagerCreateSuccessMock() : NetworkingManagerCreateFailureMock()
+			_vm = .init(wrappedValue: .init(networkingManager: mock))
+		} else {
+			_vm = .init(wrappedValue: .init())
+		}
+		#else
+		_vm = .init(wrappedValue: .init())
+		#endif
+	}
 
 	var body: some View {
 		NavigationView {
@@ -70,21 +84,25 @@ struct CreateView_Previews: PreviewProvider {
 private extension CreateView {
 	var done: some View {
 		Button("Done") { dismiss() }
+			.accessibilityIdentifier("doneButton")
 	}
 
 	var firstName: some View {
 		TextField("First Name", text: $vm.person.firstName)
 			.focused($focusedField, equals: .firstName)
+			.accessibilityIdentifier("firstNameTextField")
 	}
 
 	var lastName: some View {
 		TextField("Last Name", text: $vm.person.lastName)
 			.focused($focusedField, equals: .lastName)
+			.accessibilityIdentifier("lastNameTextField")
 	}
 
 	var job: some View {
 		TextField("Job", text: $vm.person.job)
 			.focused($focusedField, equals: .job)
+			.accessibilityIdentifier("jobTextField")
 	}
 
 	var submit: some View {
@@ -92,5 +110,6 @@ private extension CreateView {
 			focusedField = nil
 			Task { await vm.create() }
 		}
+		.accessibilityIdentifier("submitButton")
 	}
 }
