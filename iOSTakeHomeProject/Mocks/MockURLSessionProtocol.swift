@@ -5,8 +5,8 @@
 //  Created by Yash Shah on 11/09/2022.
 //
 
+#if DEBUG
 import Foundation
-import XCTest
 
 final class MockURLSessionProtocol: URLProtocol {
 	static var loadingHandler: (()-> (HTTPURLResponse, Data?))?
@@ -21,8 +21,7 @@ final class MockURLSessionProtocol: URLProtocol {
 
 	override func startLoading() {
 		guard let handler = Self.loadingHandler else {
-			XCTFail("Loading Handler not set")
-			return
+			fatalError("Loading Handler not set")
 		}
 
 		let (response, data) = handler()
@@ -37,3 +36,4 @@ final class MockURLSessionProtocol: URLProtocol {
 
 	override func stopLoading() {}
 }
+#endif

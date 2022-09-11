@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct iOSTakeHomeProjectApp: App {
+	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
 			TabView {
@@ -33,4 +35,15 @@ struct iOSTakeHomeProjectApp: App {
 			}
         }
     }
+}
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+		#if DEBUG
+		print("App Delegate - is UI Testing: \(UITestingHelper.isUITesting)")
+		#endif
+
+		return true
+	}
 }
