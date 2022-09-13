@@ -46,7 +46,9 @@ struct PeopleView: View {
 									PersonItemView(user: user)
 										.accessibilityIdentifier("item_\(user.id)")
 										.task {
-											if vm.hasReachedEnd(of: user) && !vm.isFetching { await vm.fetchNextSetOfUsers() }
+											if vm.hasReachedEnd(of: user) && !vm.isFetching {
+												await vm.fetchNextSetOfUsers()
+											}
 										}
 								}
 							}
@@ -58,6 +60,9 @@ struct PeopleView: View {
 						if vm.isFetching {
 							ProgressView("Loading…")
 						}
+					}
+					.refreshable {
+						await vm.fetchUsers()
 					}
 				}
 			}
