@@ -17,91 +17,94 @@ struct PeopleView: View {
 	@State private var hasAppeared = false
 
 	init() {
-		#if DEBUG
+#if DEBUG
 		if UITestingHelper.isUITesting {
 			let mock: NetworkingManaging = UITestingHelper.isPeopleNetworkingSuccessful ? NetworkingManagerUsersResponseSuccessMock() : NetworkingManagerUsersResponseFailureMock()
 			_vm = .init(wrappedValue: .init(networkingManager: mock))
 		} else {
 			_vm = .init(wrappedValue: .init())
 		}
-		#else
+#else
 		_vm = .init(wrappedValue: .init())
-		#endif
+#endif
 	}
 
 	var body: some View {
-		NavigationView {
-			ZStack {
-				background
+		ZStack {
+			background
 
-				if vm.isLoading {
-					ProgressView("Loading…")
-				} else {
-					ScrollView {
-						LazyVGrid(columns: columns, spacing: 16) {
-							ForEach(vm.users, id: \.id) { user in
-								NavigationLink {
-									DetailView(userID: user.id)
-								} label: {
-									PersonItemView(user: user)
-										.accessibilityIdentifier("item_\(user.id)")
-										.task {
-											if vm.hasReachedEnd(of: user) && !vm.isFetching {
-												await vm.fetchNextSetOfUsers()
-											}
+			if vm.isLoading {
+				ProgressView("Loading…")
+			} else {
+				ScrollView {
+					LazyVGrid(columns: columns, spacing: 16) {
+						ForEach(vm.users, id: \.id) { user in
+							NavigationLink {
+								DetailView(userID: user.id)
+							} label: {
+								PersonItemView(user: user)
+									.accessibilityIdentifier("item_\(user.id)")
+									.task {
+										if vm.hasReachedEnd(of: user) && !vm.isFetching {
+											await vm.fetchNextSetOfUsers()
 										}
-								}
+									}
 							}
 						}
-						.padding()
-						.accessibilityIdentifier("peopleGrid")
 					}
-					.overlay(alignment: .bottom) {
-						if vm.isFetching {
-							ProgressView("Loading…")
-						}
-					}
-					.refreshable {
-						await vm.fetchUsers()
+					.padding()
+					.accessibilityIdentifier("peopleGrid")
+				}
+				.overlay(alignment: .bottom) {
+					if vm.isFetching {
+						ProgressView("Loading…")
 					}
 				}
-			}
-			.navigationTitle("People")
-			.task {
-				if !hasAppeared {
+				.refreshable {
 					await vm.fetchUsers()
-					hasAppeared = true
-				}
-			}.toolbar {
-				ToolbarItem(placement: .primaryAction) { create }
-				ToolbarItem(placement: .navigationBarLeading) { refresh }
-			}.sheet(isPresented: $shouldShowCreate) {
-				CreateView {
-					haptic(.success)
-					withAnimation(.spring().delay(0.25)) {
-						shouldShowSuccess = true
-					}
-				}
-			}.alert(isPresented: $vm.hasError, error: vm.error) {
-				Button("Cancel", role: .cancel) {}
-
-				Button("Retry") {
-					Task { await vm.fetchUsers() }
-				}
-			}.overlay {
-				if shouldShowSuccess {
-					CheckmarkPopoverView()
-						.transition(.scale.combined(with: .opacity))
-						.onAppear {
-							DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-								withAnimation(.spring()) {
-									shouldShowSuccess = false
-								}
-							}
-						}
 				}
 			}
 		}
+		.task {
+			if !hasAppeared {
+				await vm.fetchUsers()
+				hasAppeared = true
+			}
+		}
+		.toolbar {
+			ToolbarItem(placement: .primaryAction) { create }
+			ToolbarItem(placement: .navigationBarLeading) { refresh }
+		}
+		.sheet(isPresented: $shouldShowCreate) {
+			CreateView {
+				haptic(.success)
+				withAnimation(.spring().delay(0.25)) {
+					shouldShowSuccess = true
+				}
+			}
+		}
+		.alert(isPresented: $vm.hasError, error: vm.error) {
+			Button("Cancel", role: .cancel) {}
+
+			Button("Retry") {
+				Task { await vm.fetchUsers() }
+			}
+		}
+		.overlay {
+			if shouldShowSuccess {
+				CheckmarkPopoverView()
+					.transition(.scale.combined(with: .opacity))
+					.onAppear {
+						DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+							withAnimation(.spring()) {
+								shouldShowSuccess = false
+							}
+						}
+					}
+			}
+		}
+		.embedInNavigation(withTitle: "People")
+
 	}
 }
 

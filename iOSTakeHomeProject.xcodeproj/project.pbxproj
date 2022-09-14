@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D312108128D2256A001B01A8 /* View+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312108028D2256A001B01A8 /* View+Navigation.swift */; };
 		D344FC2828CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC2728CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift */; };
 		D344FC2C28CBFD100004AC6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D344FC2B28CBFD100004AC6F /* Assets.xcassets */; };
 		D344FC2F28CBFD100004AC6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D344FC2E28CBFD100004AC6F /* Preview Assets.xcassets */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D312108028D2256A001B01A8 /* View+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Navigation.swift"; sourceTree = "<group>"; };
 		D344FC2428CBFD0F0004AC6F /* iOSTakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D344FC2728CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTakeHomeProjectApp.swift; sourceTree = "<group>"; };
 		D344FC2B28CBFD100004AC6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D312107F28D22559001B01A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D312108028D2256A001B01A8 /* View+Navigation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D344FC1B28CBFD0F0004AC6F = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +238,7 @@
 		D344FC3A28CC00360004AC6F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				D312107F28D22559001B01A8 /* Extensions */,
 				D34F5E6A28CD123900D81712 /* UserDefaults */,
 				D344FC5828CC0C170004AC6F /* Models */,
 				D34F5E6528CD103500D81712 /* Haptics */,
@@ -769,6 +780,7 @@
 				D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */,
 				D34F5E5D28CCF8BC00D81712 /* NewPerson.swift in Sources */,
 				D38C31D428CE2F5F0095C52D /* MockURLSessionProtocol.swift in Sources */,
+				D312108128D2256A001B01A8 /* View+Navigation.swift in Sources */,
 				D34F5E5928CCE47900D81712 /* PeopleViewModel.swift in Sources */,
 				D34F5E6C28CD125500D81712 /* UserDefaultsKeys.swift in Sources */,
 				D34F5E6E28CD13A600D81712 /* Endpoint.swift in Sources */,
@@ -882,13 +894,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -936,12 +949,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

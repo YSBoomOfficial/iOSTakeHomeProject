@@ -57,6 +57,7 @@ struct PersonItemView_Previews: PreviewProvider {
 	}
     static var previews: some View {
 		PersonItemView(user: previewUser)
+			.preferredColorScheme(.dark)
 			.frame(width: 250)
     }
 }

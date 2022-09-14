@@ -10,20 +10,19 @@ import SwiftUI
 struct SettingsView: View {
 	@AppStorage(UserDefaultsKeys.hapticsEnabled) var hapticsEnabled = true
 
-    var body: some View {
-		NavigationView {
-			Form {
-				haptics
-			}
-			.navigationTitle("Settings")
+	var body: some View {
+		Form {
+			haptics
 		}
-    }
+		.embedInNavigation(withTitle: "Settings")
+	}
 }
 
 struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
+	static var previews: some View {
+		SettingsView()
+			.preferredColorScheme(.dark)
+	}
 }
 
 private extension SettingsView {

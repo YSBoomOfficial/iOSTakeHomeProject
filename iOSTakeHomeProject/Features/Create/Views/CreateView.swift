@@ -16,54 +16,53 @@ struct CreateView: View {
 
 	init(successfulAction: @escaping () -> Void) {
 		self.successfulAction = successfulAction
-		#if DEBUG
+#if DEBUG
 		if UITestingHelper.isUITesting {
 			let mock: NetworkingManaging = UITestingHelper.isCreateNetworkingSuccessful ? NetworkingManagerCreateSuccessMock() : NetworkingManagerCreateFailureMock()
 			_vm = .init(wrappedValue: .init(networkingManager: mock))
 		} else {
 			_vm = .init(wrappedValue: .init())
 		}
-		#else
+#else
 		_vm = .init(wrappedValue: .init())
-		#endif
+#endif
 	}
 
 	var body: some View {
-		NavigationView {
-			Form {
-				Section {
-					firstName
-					lastName
-					job
-				} footer: {
-					if case let .validation(error) = vm.error,
-					   let errorDescription = error.errorDescription {
-						Text(errorDescription)
-							.foregroundColor(.red)
-					}
+		Form {
+			Section {
+				firstName
+				lastName
+				job
+			} footer: {
+				if case let .validation(error) = vm.error,
+				   let errorDescription = error.errorDescription {
+					Text(errorDescription)
+						.foregroundColor(.red)
 				}
+			}
 
-				Section {
-					submit
-				}
+			Section {
+				submit
 			}
-			.navigationTitle("Create")
-			.toolbar {
-				ToolbarItem(placement: .primaryAction) { done }
-			}
-			.onChange(of: vm.state) { formState in
-				if formState == .successful {
-					dismiss()
-					successfulAction()
-				}
-			}
-			.alert(isPresented: $vm.hasError, error: vm.error) {}
-			.overlay {
-				if vm.state == .submitting { ProgressView("Submitting…") }
-			}
-			.disabled(vm.state == .submitting)
 		}
+		.toolbar {
+			ToolbarItem(placement: .primaryAction) { done }
+		}
+		.onChange(of: vm.state) { formState in
+			if formState == .successful {
+				dismiss()
+				successfulAction()
+			}
+		}
+		.alert(isPresented: $vm.hasError, error: vm.error) {}
+		.overlay {
+			if vm.state == .submitting { ProgressView("Submitting…") }
+		}
+		.disabled(vm.state == .submitting)
+		.embedInNavigation(withTitle: "Create")
 	}
+
 }
 
 extension CreateView {
@@ -77,7 +76,7 @@ extension CreateView {
 struct CreateView_Previews: PreviewProvider {
 	static var previews: some View {
 		CreateView {}
-		.preferredColorScheme(.dark)
+			.preferredColorScheme(.dark)
 	}
 }
 

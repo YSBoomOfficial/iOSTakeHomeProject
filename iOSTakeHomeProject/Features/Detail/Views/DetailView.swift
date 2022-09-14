@@ -68,10 +68,10 @@ struct DetailView_Previews: PreviewProvider {
 	}
 
 	static var previews: some View {
-		NavigationView {
-			DetailView(userID: previewUserID)
-				.preferredColorScheme(.dark)
-		}
+		DetailView(userID: previewUserID)
+			.embedInNavigation()
+			.preferredColorScheme(.dark)
+
 	}
 }
 

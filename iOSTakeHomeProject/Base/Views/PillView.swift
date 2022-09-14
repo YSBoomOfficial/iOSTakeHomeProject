@@ -23,6 +23,7 @@ struct PillView: View {
 struct PillView_Previews: PreviewProvider {
     static var previews: some View {
         PillView(id: 1)
+			.preferredColorScheme(.dark)
 			.previewLayout(.sizeThatFits)
 			.padding()
     }
