@@ -183,6 +183,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D31E60FA28D3A6B8009CD72C /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D352B95A28CD49F6008BD282 /* Mapper */,
+				D352B96028CD5C88008BD282 /* Networking */,
+				D352B95D28CD53FC008BD282 /* Form */,
+			);
+			path = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		D31E60FB28D3A6C3009CD72C /* Integration Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D38C318B28CE0FDE0095C52D /* People */,
+				D38C319A28CE19C60095C52D /* Details */,
+				D38C319F28CE1ECD0095C52D /* Create */,
+			);
+			path = "Integration Tests";
+			sourceTree = "<group>";
+		};
 		D344FC1B28CBFD0F0004AC6F = {
 			isa = PBXGroup;
 			children = (
@@ -453,12 +473,8 @@
 		D352B95228CD49D8008BD282 /* iOSTakeHomeProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				D352B95A28CD49F6008BD282 /* Mapper */,
-				D352B96028CD5C88008BD282 /* Networking */,
-				D352B95D28CD53FC008BD282 /* Form */,
-				D38C318B28CE0FDE0095C52D /* People */,
-				D38C319A28CE19C60095C52D /* Details */,
-				D38C319F28CE1ECD0095C52D /* Create */,
+				D31E60FA28D3A6B8009CD72C /* Unit Tests */,
+				D31E60FB28D3A6C3009CD72C /* Integration Tests */,
 			);
 			path = iOSTakeHomeProjectTests;
 			sourceTree = "<group>";
