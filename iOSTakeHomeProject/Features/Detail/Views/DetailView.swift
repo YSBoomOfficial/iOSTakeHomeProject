@@ -10,26 +10,26 @@ import SwiftUI
 struct DetailView: View {
 	let userID: Int
 	@StateObject private var vm: DetailViewModel
-
+	
 	init(userID: Int) {
 		self.userID = userID
-
-		#if DEBUG
+		
+#if DEBUG
 		if UITestingHelper.isUITesting {
 			let mock: NetworkingManaging = UITestingHelper.isDetailsNetworkingSuccessful ? NetworkingManagerUserDetailResponseSuccessMock() : NetworkingManagerUserDetailResponseFailureMock()
 			_vm = .init(wrappedValue: .init(networkingManager: mock))
 		} else {
 			_vm = .init(wrappedValue: .init())
 		}
-		#else
+#else
 		_vm = .init(wrappedValue: .init())
-		#endif
+#endif
 	}
-
+	
 	var body: some View {
 		ZStack {
 			background
-
+			
 			if vm.isLoading {
 				ProgressView("Loading…")
 			} else {
@@ -46,7 +46,7 @@ struct DetailView: View {
 							Theme.detailBackground,
 							in: RoundedRectangle(cornerRadius: 16, style: .continuous)
 						)
-
+						
 					}.padding()
 				}
 			}
@@ -66,12 +66,12 @@ struct DetailView_Previews: PreviewProvider {
 			type: UserDetailResponse.self
 		).data.id
 	}
-
+	
 	static var previews: some View {
 		DetailView(userID: previewUserID)
 			.embedInNavigation()
 			.preferredColorScheme(.dark)
-
+		
 	}
 }
 
@@ -79,7 +79,7 @@ private extension DetailView {
 	var background: some View {
 		Theme.background.edgesIgnoringSafeArea(.top)
 	}
-
+	
 	@ViewBuilder
 	var avatar: some View {
 		if let avatarAbsStr = vm.userInfo?.data.avatar,
@@ -96,23 +96,24 @@ private extension DetailView {
 			.clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
 		}
 	}
-
+	
 	var general: some View {
 		VStack(alignment: .leading, spacing: 8) {
 			PillView(id: vm.userInfo?.data.id ?? 0)
-
+			
 			Group {
 				DetailItemView(
 					title: "First Name",
 					text: vm.userInfo?.data.firstName ?? "-"
 				)
-
+				
 				Divider()
-
+				
 				DetailItemView(
 					title: "Last Name",
 					text: vm.userInfo?.data.lastName ?? "-"
 				)
+				
 				Divider()
 				
 				DetailItemView(
@@ -123,7 +124,7 @@ private extension DetailView {
 			.foregroundColor(Theme.text)
 		}
 	}
-
+	
 	@ViewBuilder
 	var link: some View {
 		if let supportAbsStr = vm.userInfo?.support.url,
@@ -141,9 +142,9 @@ private extension DetailView {
 					Text(supportAbsStr)
 						.underline()
 				}
-
+				
 				Spacer()
-
+				
 				Symbols.link.font(.system(.title3, design: .rounded))
 			}
 		}

@@ -37,23 +37,7 @@ struct PeopleView: View {
 				ProgressView("Loading…")
 			} else {
 				ScrollView {
-					LazyVGrid(columns: columns, spacing: 16) {
-						ForEach(vm.users, id: \.id) { user in
-							NavigationLink {
-								DetailView(userID: user.id)
-							} label: {
-								PersonItemView(user: user)
-									.accessibilityIdentifier("item_\(user.id)")
-									.task {
-										if vm.hasReachedEnd(of: user) && !vm.isFetching {
-											await vm.fetchNextSetOfUsers()
-										}
-									}
-							}
-						}
-					}
-					.padding()
-					.accessibilityIdentifier("peopleGrid")
+					peopleGrid
 				}
 				.overlay(alignment: .bottom) {
 					if vm.isFetching {
@@ -92,15 +76,7 @@ struct PeopleView: View {
 		}
 		.overlay {
 			if shouldShowSuccess {
-				CheckmarkPopoverView()
-					.transition(.scale.combined(with: .opacity))
-					.onAppear {
-						DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-							withAnimation(.spring()) {
-								shouldShowSuccess = false
-							}
-						}
-					}
+				checkmarkPopoverView
 			}
 		}
 		.embedInNavigation(withTitle: "People")
@@ -145,4 +121,39 @@ private extension PeopleView {
 				)
 		}.disabled(vm.isLoading)
 	}
+}
+
+private extension PeopleView {
+	var peopleGrid: some View {
+		LazyVGrid(columns: columns, spacing: 16) {
+			ForEach(vm.users, id: \.id) { user in
+				NavigationLink {
+					DetailView(userID: user.id)
+				} label: {
+					PersonItemView(user: user)
+						.accessibilityIdentifier("item_\(user.id)")
+						.task {
+							if vm.hasReachedEnd(of: user) && !vm.isFetching {
+								await vm.fetchNextSetOfUsers()
+							}
+						}
+				}
+			}
+		}
+		.padding()
+		.accessibilityIdentifier("peopleGrid")
+	}
+
+	var checkmarkPopoverView: some View {
+		CheckmarkPopoverView()
+			.transition(.scale.combined(with: .opacity))
+			.onAppear {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+					withAnimation(.spring()) {
+						shouldShowSuccess = false
+					}
+				}
+			}
+	}
+
 }

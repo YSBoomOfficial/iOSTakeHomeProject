@@ -12,7 +12,7 @@ struct SettingsView: View {
 
 	var body: some View {
 		Form {
-			haptics
+			Toggle("Enable Haptics", isOn: $hapticsEnabled)
 		}
 		.embedInNavigation(withTitle: "Settings")
 	}
@@ -22,11 +22,5 @@ struct SettingsView_Previews: PreviewProvider {
 	static var previews: some View {
 		SettingsView()
 			.preferredColorScheme(.dark)
-	}
-}
-
-private extension SettingsView {
-	var haptics: some View {
-		Toggle("Enable Haptics", isOn: $hapticsEnabled)
 	}
 }

@@ -12,15 +12,7 @@ struct PersonItemView: View {
 
     var body: some View {
 		VStack(spacing: .zero) {
-			AsyncImage(url: .init(string: user.avatar)) { image in
-				image
-					.resizable()
-					.aspectRatio(contentMode: .fill)
-					.frame(height: 130)
-					.clipped()
-			} placeholder: {
-				ProgressView()
-			}
+			personImage
 
 			VStack(alignment: .leading) {
 
@@ -60,4 +52,18 @@ struct PersonItemView_Previews: PreviewProvider {
 			.preferredColorScheme(.dark)
 			.frame(width: 250)
     }
+}
+
+private extension PersonItemView {
+	var personImage: some View {
+		AsyncImage(url: .init(string: user.avatar)) { image in
+			image
+				.resizable()
+				.aspectRatio(contentMode: .fill)
+				.frame(height: 130)
+				.clipped()
+		} placeholder: {
+			ProgressView()
+		}
+	}
 }

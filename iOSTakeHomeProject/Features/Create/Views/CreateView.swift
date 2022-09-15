@@ -31,9 +31,7 @@ struct CreateView: View {
 	var body: some View {
 		Form {
 			Section {
-				firstName
-				lastName
-				job
+				entryFields
 			} footer: {
 				if case let .validation(error) = vm.error,
 				   let errorDescription = error.errorDescription {
@@ -64,7 +62,6 @@ struct CreateView: View {
 		.disabled(vm.state == .submitting)
 		.embedInNavigation(withTitle: "Create")
 	}
-
 }
 
 extension CreateView {
@@ -88,19 +85,16 @@ private extension CreateView {
 			.accessibilityIdentifier("doneButton")
 	}
 
-	var firstName: some View {
+	@ViewBuilder
+	var entryFields: some View {
 		TextField("First Name", text: $vm.person.firstName)
 			.focused($focusedField, equals: .firstName)
 			.accessibilityIdentifier("firstNameTextField")
-	}
 
-	var lastName: some View {
 		TextField("Last Name", text: $vm.person.lastName)
 			.focused($focusedField, equals: .lastName)
 			.accessibilityIdentifier("lastNameTextField")
-	}
 
-	var job: some View {
 		TextField("Job", text: $vm.person.job)
 			.focused($focusedField, equals: .job)
 			.accessibilityIdentifier("jobTextField")
