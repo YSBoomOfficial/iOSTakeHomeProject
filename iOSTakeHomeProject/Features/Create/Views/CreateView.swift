@@ -57,7 +57,9 @@ struct CreateView: View {
 		}
 		.alert(isPresented: $vm.hasError, error: vm.error) {}
 		.overlay {
-			if vm.state == .submitting { ProgressView("Submitting…") }
+			if vm.state == .submitting {
+				ProgressView("Submitting…")
+			}
 		}
 		.disabled(vm.state == .submitting)
 		.embedInNavigation(withTitle: "Create")

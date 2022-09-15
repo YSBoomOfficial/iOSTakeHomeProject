@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D312108128D2256A001B01A8 /* View+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312108028D2256A001B01A8 /* View+Navigation.swift */; };
+		D31E60F928D3A391009CD72C /* DetailItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E60F828D3A391009CD72C /* DetailItemView.swift */; };
 		D344FC2828CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344FC2728CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift */; };
 		D344FC2C28CBFD100004AC6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D344FC2B28CBFD100004AC6F /* Assets.xcassets */; };
 		D344FC2F28CBFD100004AC6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D344FC2E28CBFD100004AC6F /* Preview Assets.xcassets */; };
@@ -86,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		D312108028D2256A001B01A8 /* View+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Navigation.swift"; sourceTree = "<group>"; };
+		D31E60F828D3A391009CD72C /* DetailItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemView.swift; sourceTree = "<group>"; };
 		D344FC2428CBFD0F0004AC6F /* iOSTakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D344FC2728CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTakeHomeProjectApp.swift; sourceTree = "<group>"; };
 		D344FC2B28CBFD100004AC6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				D3502BFD28CC214100E8E09A /* DetailView.swift */,
+				D31E60F828D3A391009CD72C /* DetailItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				D344FC2828CBFD0F0004AC6F /* iOSTakeHomeProjectApp.swift in Sources */,
 				D34F5E5728CCDF5400D81712 /* NetworkingManager.swift in Sources */,
 				D344FC5728CC0BA50004AC6F /* UsersResponse.swift in Sources */,
+				D31E60F928D3A391009CD72C /* DetailItemView.swift in Sources */,
 				D3502BF928CC1BA600E8E09A /* PersonItemView.swift in Sources */,
 				D34F5E5D28CCF8BC00D81712 /* NewPerson.swift in Sources */,
 				D38C31D428CE2F5F0095C52D /* MockURLSessionProtocol.swift in Sources */,

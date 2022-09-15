@@ -97,52 +97,28 @@ private extension DetailView {
 		}
 	}
 
-	@ViewBuilder
-	var firstName: some View {
-		Text("First Name")
-			.font(
-				.system(.body, design: .rounded)
-				.weight(.semibold)
-			)
-
-		Text(vm.userInfo?.data.firstName ?? "-")
-			.font(.system(.subheadline, design: .rounded))
-	}
-
-	@ViewBuilder
-	var lastName: some View {
-		Text("Last Name")
-			.font(
-				.system(.body, design: .rounded)
-				.weight(.semibold)
-			)
-
-		Text(vm.userInfo?.data.lastName ?? "-")
-			.font(.system(.subheadline, design: .rounded))
-	}
-
-	@ViewBuilder
-	var email: some View {
-		Text("Email")
-			.font(
-				.system(.body, design: .rounded)
-				.weight(.semibold)
-			)
-
-		Text(vm.userInfo?.data.email ?? "-")
-			.font(.system(.subheadline, design: .rounded))
-	}
-
 	var general: some View {
 		VStack(alignment: .leading, spacing: 8) {
 			PillView(id: vm.userInfo?.data.id ?? 0)
 
 			Group {
-				firstName
+				DetailItemView(
+					title: "First Name",
+					text: vm.userInfo?.data.firstName ?? "-"
+				)
+
 				Divider()
-				lastName
+
+				DetailItemView(
+					title: "Last Name",
+					text: vm.userInfo?.data.lastName ?? "-"
+				)
 				Divider()
-				email
+				
+				DetailItemView(
+					title: "Email",
+					text: vm.userInfo?.data.email ?? "-"
+				)
 			}
 			.foregroundColor(Theme.text)
 		}
